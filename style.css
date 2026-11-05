@@ -34,3 +34,19 @@ html[data-theme=dark] .cards-banner{background:#304b39;color:#faf1d9}
 @media(max-width:1000px){.game-layout{grid-template-columns:1fr}.game-layout aside{grid-row:1}}
 @media(max-width:600px){.theme-label{display:none}.cards-banner{padding:12px}.cards-banner strong{font-size:58px}nav{gap:0}nav button{padding:8px}.brand{letter-spacing:1px}.round-entry{gap:9px}.prediction-label{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.dealer-highlight:before,.round-entry:has(.dealer-icon) label:before,.first-predictor input{animation:none}.first-predictor input{box-shadow:0 0 0 3px rgba(var(--fog),.16)}}
+
+/* Larger names and content-based score/input layout. */
+main{max-width:1600px;padding-inline:clamp(20px,3vw,48px);container-type:inline-size}
+.player-heading{font-size:18px;font-weight:600;white-space:normal;overflow-wrap:anywhere;line-height:1.3}
+.round-entry label{font-size:20px;font-weight:500;line-height:1.4}
+.round-entry label small{font-size:12px;font-weight:400}
+.names input{font-size:18px}
+.game-layout{grid-template-columns:minmax(0,1fr);align-items:start}
+.game-layout>section,.game-layout>aside{min-width:0}
+.game-layout>aside{grid-row:1}
+@container(min-width:880px){
+ .game-layout{grid-template-columns:minmax(0,1fr) 380px;gap:24px}
+ .game-layout>section{grid-column:1;grid-row:1}
+ .game-layout>aside{grid-column:2;grid-row:1}
+ .game-layout th,.game-layout td{padding-inline:8px}
+}
