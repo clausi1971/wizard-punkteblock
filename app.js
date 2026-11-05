@@ -1,7 +1,7 @@
 const KEY='wizard-block-v1';let data;try{data=JSON.parse(localStorage.getItem(KEY))||{current:null,history:[]}}catch{data={current:null,history:[]}}let view='play',players=4,phase='bid',draft=[],editing=null,archiveGame=null;const app=document.querySelector('#app'),dialog=document.querySelector('#dialog');
 const themeButton=document.querySelector('#themeToggle');
 function setTheme(dark){document.documentElement.dataset.theme=dark?'dark':'light';themeButton.setAttribute('aria-pressed',String(dark));themeButton.setAttribute('aria-label',dark?'Hellmodus einschalten':'Dunkelmodus einschalten');themeButton.innerHTML=(dark?'☀':'☾')+' <span class="theme-label">'+(dark?'Hell':'Dunkel')+'</span>';document.querySelector('meta[name="theme-color"]').content=dark?'#101d1b':'#f5f4ee'}
-let dark=false;try{dark=localStorage.getItem('wizard-theme')==='dark'}catch{}setTheme(dark);themeButton.onclick=()=>{dark=!dark;setTheme(dark);try{localStorage.setItem('wizard-theme',dark?'dark':'light')}catch{}};
+let dark=true;try{dark=localStorage.getItem('wizard-theme')!=='light'}catch{}setTheme(dark);themeButton.onclick=()=>{dark=!dark;setTheme(dark);try{localStorage.setItem('wizard-theme',dark?'dark':'light')}catch{}};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function points(b,a){return b===a?20+10*a:-10*Math.abs(b-a)}
 function totals(g){return g.names.map((_,i)=>g.rounds.reduce((s,r)=>s+points(r.bid[i],r.actual[i]),0))}
