@@ -50,3 +50,9 @@ main{max-width:1600px;padding-inline:clamp(20px,3vw,48px);container-type:inline-
  .game-layout>aside{grid-column:2;grid-row:1}
  .game-layout th,.game-layout td{padding-inline:8px}
 }
+
+#paperFields{margin:20px 0 0;padding:0 14px 4px;border:1px solid var(--line);border-radius:8px}
+#paperFields legend{padding:0 6px;font-weight:600}
+#paperFields .names{margin-top:16px}
+.game-layout td:first-child small{display:block;margin:4px 0 0}
+.legend{flex-wrap:wrap}
